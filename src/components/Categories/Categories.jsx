@@ -9,13 +9,6 @@ export const Categories = () => {
     const [numberofCategoryToShow, setnumberofCategoryToShow] = useState(0)
     const {  hotelCategory,  sethotelCategory}  = useCategory()
       const ITEMS_PER_PAGE = 10;
-      const categories1 = [
-    { label: "Tropical", value: "Tropical" },
-    { label: "Caves", value: "Caves" },
-    { label: "Amazing Views", value: "Amazing Views" },
-    { label: "Cabins", value: "Cabins" },
-    { label: "A-frames", value: "A-frames" },
-  ];
     const handleShowMoreRightClick = () => {
         setnumberofCategoryToShow((prev) => prev +ITEMS_PER_PAGE )
     }
