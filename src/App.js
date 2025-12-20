@@ -1,8 +1,11 @@
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Home } from "./pages"
 function App() {
   return (
-    <h1>hii</h1>
+    <>
+     <Home/>
+    </>
+   
   );
 }
 

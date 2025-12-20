@@ -1,0 +1,72 @@
+          .navbar {
+           border: 1px solid black;
+           }
+           .navbar:hover {
+           box-shadow: 2px 2px  5px 4px rgba(0,0,0,.1)
+           }
+           .search-container {
+              border: 1px solid #ddd;
+              border-radius: 40px;
+              padding: 6px 6px 6px 20px; 
+              background-color: white;
+              transition: box-shadow 0.2s ease;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            }
+            .search-container:hover {
+              box-shadow: 0 3px 10px rgba(0,0,0,0.25) ;
+            }
+            .search-section {
+              font-size: 14px;
+              font-weight: 600;
+              padding: 0 16px;
+              white-space: nowrap;
+            }
+            .v-line {
+              height: 24px;
+              width: 1px;
+              background-color: #ddd;
+            }
+            .search-icon-btn {
+              border: 1px solid black;
+              border-radius: 50%;
+              width: 32px;
+              height: 32px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease;
+              color: black;
+            }
+           .search-icon-btn:hover {
+              background-color: red !important;
+              transform: scale(1.1); 
+              cursor: pointer;
+            }
+            .custom-toggler {
+              transition: all 0.3s ease;
+              border: 1px solid #ecf0f1; 
+            }
+  
+            .custom-toggler:hover {
+            background-color: red !important;
+            border-color: #ffffff !important;
+            transform: scale(1.1);
+            }
+            
+            .icon {
+            border: none;
+            }
+
+            .icon-hover {
+            border-radius:50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            }
+
+            .icon-hover:hover {
+            background-color: red;
+            color: white;
+            }
