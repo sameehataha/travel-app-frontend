@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Navbar, HotelCard, Categories } from "../../components";
+import { Navbar, HotelCard, Categories , SearchStayWithDate } from "../../components";
 import "./Home.css";
 import { motion } from "framer-motion";
-import { useCategory } from "../../Context";
+import { useCategory, useDate } from "../../Context";
+
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [testData, setTestData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(16);
-   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [hotels, setHotels] = useState([]);
   const { hotelCategory } = useCategory()
+  const { isSearchModalOpen } = useDate()
+  
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -20,7 +23,7 @@ export const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-         setIsLoading(true);
+        setIsLoading(true);
         const { data } = await axios.get(
           `https://travel-app-backend-jrcu.onrender.com/api/hotels?category=${hotelCategory}`
         );
@@ -28,15 +31,14 @@ export const Home = () => {
         setHotels(data ? data.slice(0, 16) : []);
         setCurrentIndex(16)
         setHasMore(true)
-        // setHotels(data)
-        // console.log(data)
       } catch (err) {
         console.log(err);
-      }finally {
+      } finally {
         setIsLoading(false)
       }
     })();
   }, [hotelCategory]);
+  
   const fetchMoreData = () => {
     if (hotels.length >= testData.length) {
       setHasMore(false);
@@ -53,11 +55,15 @@ export const Home = () => {
       }
     }, 1000);
   };
+  
   return (
     <>
       <Navbar />
       <Categories/>
-       {isLoading ? (
+      
+      {isSearchModalOpen && <SearchStayWithDate />}
+      
+      {isLoading ? (
         <motion.div
           className="container mt-5 text-center"
           initial={{ opacity: 0 }}
@@ -96,7 +102,7 @@ export const Home = () => {
           }
         >
           <div className="container mt-4">
-            <div className="row g-2 ">
+            <div className="row g-2">
               {hotels.map((hotel) => (
                 <motion.div
                   className="col-12 col-sm-6 col-lg-3"

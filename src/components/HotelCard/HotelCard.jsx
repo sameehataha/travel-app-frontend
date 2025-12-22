@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom"
 export const HotelCard = ({ hotel }) => {
   const { _id, name, image, address, state, rating, price } = hotel;
- 
-
+ const navigate = useNavigate()
+const handleHotelCardClick = () => {
+      navigate(`/hotels/${name}/${address}-${state}/${_id}/reverse`)
+}
   return (
-    <div
+    <div onClick={handleHotelCardClick}
       className="card position-relative h-100"
       style={{ width: "18rem", border: "none" }}
     >
