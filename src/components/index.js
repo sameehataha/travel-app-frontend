@@ -1,3 +1,8 @@
 export { Navbar } from "./Navbar/Navbar"
 export { HotelCard } from "./HotelCard/HotelCard"
 export { Categories } from "./Categories/Categories"
+export { HotelImages } from "./HotelImages/HotelImages"
+export { HotelDetails } from "./HotelDetails/HotelDetails"
+export { PriceCard }from "./PriceCard/PriceCard"
+export { DateSelector } from "./DateSelector/DateSelector"
+export { SearchStayWithDate } from "./SearchStayWithDate/SearchStayWithDate"

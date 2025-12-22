@@ -2,8 +2,14 @@ import React from "react";
 import { Menu, Search, SquareUser } from "lucide-react";
 import "./Navbar.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+import { useDate } from "../../Context";
 export const Navbar = () => {
+  const {destination,checkin,checkout, guests, dateDispatch} = useDate()
+  const handleSearchClick =() => {
+      dateDispatch({
+        type: "OPEN_SEARCH_MODAL",
+      })
+  }
   return (
     <>
       <nav
@@ -18,7 +24,7 @@ export const Navbar = () => {
             Booking.com
           </h1>
           <button
-            className="navbar-toggler custom-toggler"
+            className="navbar-toggler custom-toggler1"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -29,35 +35,38 @@ export const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="d-flex mx-auto search-container align-items-center shadow-sm">
-              <button
-                type="button"
-                className="search-section border-0 bg-transparent"
-              >
-                Anywhere
+            <div className="d-flex mx-auto search-container1 align-items-center shadow-sm" onClick={handleSearchClick}>
+              <button  type="button" className="search-section1 border-0 bg-transparent">
+                {destination || "Any Where"}
               </button>
               <div className="v-line"></div>
               <button
                 type="button"
-                className="search-section border-0 bg-transparent"
+                className="search-section1 border-0 bg-transparent"
               >
-                Any week
+               {checkin && checkout ? `${checkin.toLocaleDateString("en-Us", {
+                day: "numeric",
+                month: "short",
+               })} - ${checkout.toLocaleDateString("en-Us", {
+                day: "numeric",
+                month: "short",
+               })}`: "Any Week"}
               </button>
               <div className="v-line"></div>
               <button
                 type="button"
-                className="search-section border-0 bg-transparent"
+                className="search-section1 border-0 bg-transparent"
               >
-                Add guests
+                { guests > 0 ? `${guests} guests`:"Add Guests"}
               </button>
-               <button className="search-icon-btn">
+               <span className="search-icon-btn1">
                 <Search size={16} strokeWidth={3} />
-              </button>
+              </span>
               </div>
-            <div className="d-flex  m-2 p-2 icon icon-hover">
+            <div className="d-flex  m-2 p-2 icon1 icon-hover1">
               <Menu />
             </div>
-            <div className="d-flex m-2  p-2 icon icon-hover">
+            <div className="d-flex m-2  p-2 icon1 icon-hover1">
               <SquareUser />
             </div>
           </div>

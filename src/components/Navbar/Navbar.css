@@ -4,7 +4,7 @@
            .navbar:hover {
            box-shadow: 2px 2px  5px 4px rgba(0,0,0,.1)
            }
-           .search-container {
+           .search-container1 {
               border: 1px solid #ddd;
               border-radius: 40px;
               padding: 6px 6px 6px 20px; 
@@ -15,10 +15,10 @@
               align-items: center;
               box-shadow: 0 1px 4px rgba(0,0,0,0.12);
             }
-            .search-container:hover {
+            .search-container1:hover {
               box-shadow: 0 3px 10px rgba(0,0,0,0.25) ;
             }
-            .search-section {
+            .search-section1 {
               font-size: 14px;
               font-weight: 600;
               padding: 0 16px;
@@ -29,7 +29,7 @@
               width: 1px;
               background-color: #ddd;
             }
-            .search-icon-btn {
+            .search-icon-btn1 {
               border: 1px solid black;
               border-radius: 50%;
               width: 32px;
@@ -40,33 +40,33 @@
               transition: all 0.3s ease;
               color: black;
             }
-           .search-icon-btn:hover {
+           .search-icon-btn1:hover {
               background-color: red !important;
               transform: scale(1.1); 
               cursor: pointer;
             }
-            .custom-toggler {
+            .custom-toggler1 {
               transition: all 0.3s ease;
               border: 1px solid #ecf0f1; 
             }
   
-            .custom-toggler:hover {
+            .custom-toggler1:hover {
             background-color: red !important;
             border-color: #ffffff !important;
             transform: scale(1.1);
             }
             
-            .icon {
+            .icon1 {
             border: none;
             }
 
-            .icon-hover {
+            .icon-hover1 {
             border-radius:50%;
             cursor: pointer;
             transition: background 0.3s ease;
             }
 
-            .icon-hover:hover {
+            .icon-hover1:hover {
             background-color: red;
             color: white;
             }
