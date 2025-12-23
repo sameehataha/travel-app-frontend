@@ -1,0 +1,8 @@
+.room-number {
+  min-width: 50px;
+  cursor: pointer;
+}
+
+.span-label {
+  font-weight: 500;
+}
