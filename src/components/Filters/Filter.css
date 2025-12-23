@@ -1,0 +1,54 @@
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1050; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.filter-card {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 120px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.filter-container {
+  padding: 1rem 0;
+}
+
+.filter-label {
+  display: inline-block;
+  font-size: 1.87rem;
+  opacity: .5;
+  padding: 8px 0;
+}
+
+/* Custom scrollbar */
+.filter-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filter-card::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.filter-card::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.filter-card::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

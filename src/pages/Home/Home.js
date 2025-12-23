@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Navbar, HotelCard, Categories , SearchStayWithDate } from "../../components";
+import { Navbar, HotelCard, Categories , SearchStayWithDate, Filter } from "../../components";
 import "./Home.css";
 import { motion } from "framer-motion";
-import { useCategory, useDate } from "../../Context";
-
+import { useCategory, useDate,useFilter } from "../../Context";
+import {getHotelsByPrice,getHotelsByRoomsAndBeds,getHotelsByPropertyType,getHotelsByRatings,getHotelsByCancelation } from "../../utils"
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [testData, setTestData] = useState([]);
@@ -14,7 +14,7 @@ export const Home = () => {
   const [hotels, setHotels] = useState([]);
   const { hotelCategory } = useCategory()
   const { isSearchModalOpen } = useDate()
-  
+  const {isFilterModalOpen,priceRange, noOfBathrooms,noOfBedrooms, noOfBeds,propertyType,travelRating,isCancelable} = useFilter()
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -55,14 +55,18 @@ export const Home = () => {
       }
     }, 1000);
   };
-  
-  return (
+ const  filteredHotelsByprice = getHotelsByPrice(hotels,priceRange)
+ const  filteredHotelsByBedsAndRooms = getHotelsByRoomsAndBeds(filteredHotelsByprice,noOfBathrooms,noOfBedrooms, noOfBeds) 
+ const filteredHotelsByPropertyType = getHotelsByPropertyType(filteredHotelsByBedsAndRooms,propertyType)
+ const filteredHotelsByRatings = getHotelsByRatings(filteredHotelsByPropertyType,travelRating)
+ const filteredHotelsByisCancelable = getHotelsByCancelation(filteredHotelsByRatings,isCancelable)
+  return ( 
     <>
       <Navbar />
       <Categories/>
       
       {isSearchModalOpen && <SearchStayWithDate />}
-      
+      {isFilterModalOpen && <Filter/>}
       {isLoading ? (
         <motion.div
           className="container mt-5 text-center"
@@ -103,7 +107,7 @@ export const Home = () => {
         >
           <div className="container mt-4">
             <div className="row g-2">
-              {hotels.map((hotel) => (
+              {filteredHotelsByisCancelable.map((hotel) => (
                 <motion.div
                   className="col-12 col-sm-6 col-lg-3"
                   key={hotel._id}
