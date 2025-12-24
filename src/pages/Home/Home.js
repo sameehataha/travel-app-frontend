@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Navbar, HotelCard, Categories , SearchStayWithDate, Filter } from "../../components";
+import { Navbar, HotelCard, Categories , SearchStayWithDate, Filter,AuthModal } from "../../components";
 import "./Home.css";
 import { motion } from "framer-motion";
-import { useCategory, useDate,useFilter } from "../../Context";
+import { useCategory, useDate,useFilter,useAuth } from "../../Context";
 import {getHotelsByPrice,getHotelsByRoomsAndBeds,getHotelsByPropertyType,getHotelsByRatings,getHotelsByCancelation } from "../../utils"
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
@@ -15,6 +15,7 @@ export const Home = () => {
   const { hotelCategory } = useCategory()
   const { isSearchModalOpen } = useDate()
   const {isFilterModalOpen,priceRange, noOfBathrooms,noOfBedrooms, noOfBeds,propertyType,travelRating,isCancelable} = useFilter()
+  const { isAuthModalOpen } = useAuth()
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -67,6 +68,7 @@ export const Home = () => {
       
       {isSearchModalOpen && <SearchStayWithDate />}
       {isFilterModalOpen && <Filter/>}
+      {isAuthModalOpen && <AuthModal/>}
       {isLoading ? (
         <motion.div
           className="container mt-5 text-center"

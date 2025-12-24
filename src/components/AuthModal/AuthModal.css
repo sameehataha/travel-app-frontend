@@ -1,0 +1,15 @@
+.btn-close-modal:hover {
+    background-color: #dc3545 !important; /* Bootstrap Red */
+    color: black !important;
+}
+
+.btn-close-modal:hover svg {
+    stroke: black;
+}
+/* Deep shadow that is visible on all sides */
+.auth-modal-container {
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2), 
+                10px 0 30px rgba(0, 0, 0, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px 10 10 10px; /* Optional: rounds the inner corners */
+}
