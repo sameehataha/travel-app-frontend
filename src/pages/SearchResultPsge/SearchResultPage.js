@@ -2,6 +2,7 @@ import { Fragment } from "react"
 import  {HotelCard, Navbar} from "../../components"
 import { useState,useEffect } from "react"
 import { useDate, useCategory } from "../../Context"
+import { API_ENDPOINTS } from "../../config/api"
 import axios from "axios"
 export const SearchResults = () => {
     const { destination } = useDate()
@@ -11,7 +12,7 @@ export const SearchResults = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://travel-app-backend-jrcu.onrender.com/api/hotels?category=${hotelCategory}`
+          API_ENDPOINTS.getHotelsByCategory(hotelCategory)
         );
         setHotels(data);
       } catch (err) {

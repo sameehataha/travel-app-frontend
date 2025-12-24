@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { HotelDetails, HotelImages, Navbar } from "../../components";
+import { API_ENDPOINTS } from "../../config/api"
 export const SingleHotel = ({}) => {
   const [singleHotel, setSingleHotel] = useState({});
   const { id } = useParams();
@@ -9,7 +10,7 @@ export const SingleHotel = ({}) => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://travel-app-backend-jrcu.onrender.com/api/hotels/${id}`
+         API_ENDPOINTS.getSingleHotel(id)
         );
         setSingleHotel(data);
         //  console.log(data)

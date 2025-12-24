@@ -5,13 +5,14 @@ import { ChevronLeft } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { Funnel } from "lucide-react";
 import { useCategory,useFilter } from "../../Context";
-
+import {API_ENDPOINTS} from "../../config/api"
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [totalCategories, setTotalCategories] = useState(0); // Store total count
   const [numberofCategoryToShow, setnumberofCategoryToShow] = useState(0);
   const { hotelCategory, sethotelCategory } = useCategory();
   const {filterDispatch} = useFilter()
+
   const ITEMS_PER_PAGE = 10;
   
   const handleShowMoreRightClick = () => {
@@ -29,9 +30,7 @@ export const Categories = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get(
-          "https://travel-app-backend-jrcu.onrender.com/api/category"
-        );
+        const { data } = await axios.get(API_ENDPOINTS.getCategories());
         setTotalCategories(data.length); // Store total length
         const categoryToShow = data.slice(
           numberofCategoryToShow + ITEMS_PER_PAGE > data.length

@@ -7,6 +7,7 @@ import axios from "axios";
 import { dateReducer } from "../../reducer";
 import { address } from "framer-motion/client";
 import { Navigate, useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../../config/api"
 export const SearchStayWithDate = () => {
   const { destination, guests, isSearchResultOpen, dateDispatch } = useDate();
   const { hotelCategory } = useCategory();
@@ -16,7 +17,7 @@ const navigate = useNavigate()
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://travel-app-backend-jrcu.onrender.com/api/hotels?category=${hotelCategory}`
+           API_ENDPOINTS.getHotelsByCategory(hotelCategory)
         );
         setHotels(data);
       } catch (err) {

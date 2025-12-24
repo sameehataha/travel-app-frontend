@@ -6,6 +6,7 @@ import "./Home.css";
 import { motion } from "framer-motion";
 import { useCategory, useDate,useFilter,useAuth } from "../../Context";
 import {getHotelsByPrice,getHotelsByRoomsAndBeds,getHotelsByPropertyType,getHotelsByRatings,getHotelsByCancelation } from "../../utils"
+import { API_ENDPOINTS } from "../../config/api"
 export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [testData, setTestData] = useState([]);
@@ -26,7 +27,7 @@ export const Home = () => {
       try {
         setIsLoading(true);
         const { data } = await axios.get(
-          `https://travel-app-backend-jrcu.onrender.com/api/hotels?category=${hotelCategory}`
+            API_ENDPOINTS.getHotelsByCategory(hotelCategory)
         );
         setTestData(data || []);
         setHotels(data ? data.slice(0, 16) : []);

@@ -1,8 +1,8 @@
 import axios from "axios"
-
+import { API_ENDPOINTS } from "../config/api"
 export const loginHandler = async (number,password) => {
     try{
-        const { data: { accessToken, username, ...rest } } = await axios.post("https://travel-app-backend-jrcu.onrender.com/api/auth/login" , {
+        const { data: { accessToken, username, ...rest } } = await axios.post(API_ENDPOINTS.login, {
             number:number, password:password 
         })
           console.log({accessToken, username})

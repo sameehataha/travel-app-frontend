@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { API_ENDPOINTS } from "../config/api"
 export const signupHandler = async (name, number, email, password) => {
     try {
         const response = await axios.post(
-            "https://travel-app-backend-jrcu.onrender.com/api/auth/register",
+           API_ENDPOINTS.register,
             {
                 username: name,
                 number: number,

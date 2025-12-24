@@ -3,8 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDate } from "../../Context";
 import axios from "axios";
 import "./payment.css";
-import { source } from "framer-motion/client";
-import { Currency } from "lucide-react";
+import { API_ENDPOINTS } from "../../config/api"
 export const Payment = () => {
   const { guests, dateDispatch, checkin, checkout } = useDate();
   const numberOfNights =
@@ -19,7 +18,7 @@ export const Payment = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://travel-app-backend-jrcu.onrender.com/api/hotels/${id}`
+            API_ENDPOINTS.getSingleHotel(id)
         );
         setSingleHotel(data);
         //  console.log(data)
