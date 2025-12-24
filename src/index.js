@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { CategoryProvider,DateProvider,FilteredProvider } from './Context';
+import { CategoryProvider,DateProvider,FilteredProvider,AuthProvider } from './Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +11,9 @@ root.render(
     <CategoryProvider>
       <DateProvider>   
         <FilteredProvider >
-           <App /> 
+          <AuthProvider>
+            <App /> 
+          </AuthProvider>
         </FilteredProvider>
       </DateProvider>
     </CategoryProvider>

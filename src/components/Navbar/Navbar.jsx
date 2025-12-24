@@ -2,13 +2,19 @@ import React from "react";
 import { Menu, Search, SquareUser } from "lucide-react";
 import "./Navbar.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { useDate } from "../../Context";
+import { useDate,useAuth } from "../../Context";
 export const Navbar = () => {
   const {destination,checkin,checkout, guests, dateDispatch} = useDate()
+  const  {authDispatch} = useAuth()
   const handleSearchClick =() => {
       dateDispatch({
         type: "OPEN_SEARCH_MODAL",
       })
+  }
+  const handleAuthClick = () => {
+    authDispatch({
+      type: "SHOW_AUTHMODAL"
+    })
   }
   return (
     <>
@@ -63,10 +69,7 @@ export const Navbar = () => {
                 <Search size={16} strokeWidth={3} />
               </span>
               </div>
-            <div className="d-flex  m-2 p-2 icon1 icon-hover1">
-              <Menu />
-            </div>
-            <div className="d-flex m-2  p-2 icon1 icon-hover1">
+            <div className="d-flex m-2  p-2 icon1 icon-hover1" onClick={handleAuthClick}>
               <SquareUser />
             </div>
           </div>
