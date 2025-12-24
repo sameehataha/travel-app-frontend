@@ -30,10 +30,10 @@ export const AuthLogin = () => {
       console.log("invalid confiorm password");
     }
   };
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit =  (e) => {
     e.preventDefault();
     if (isNumberValid && isPasswordValid) {
-      const { acessToken, username1 } = await loginHandler(number, password);
+      const { acessToken, username1 } =  loginHandler(number, password);
       authDispatch({
         type: "SET_ACCESS_TOKEN",
         payload: acessToken,
@@ -50,6 +50,23 @@ export const AuthLogin = () => {
       type: "SHOW_AUTHMODAL",
     });
   };
+  const handleTestCredentials = async () =>{
+  const { acessToken, username1 } = await loginHandler(7777777777, "Test@123456" );
+  authDispatch({
+        type: "SET_ACCESS_TOKEN",
+        payload: acessToken,
+      });
+      authDispatch({
+        type: "SET_USERNAME_TOKEN",
+        payload: username1,
+      });
+       authDispatch({
+      type: "CLEAR_USER_DATA",
+    });
+    authDispatch({
+      type: "SHOW_AUTHMODAL",
+    });
+  }
   return (
     <form onSubmit={handleFormSubmit}>
       {/* Mobile Number */}
@@ -91,6 +108,7 @@ export const AuthLogin = () => {
       </button>
 
       <button
+      onClick={handleTestCredentials}
         type="button"
         className="btn btn-outline-danger w-100 fw-semibold"
       >
