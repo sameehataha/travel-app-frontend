@@ -1,6 +1,7 @@
 import { validateNumber, validatePassword } from "../../utils";
 import { useAuth } from "../../Context";
 import { loginHandler } from "../../services";
+import { aside } from "framer-motion/client";
 let isNumberValid, isPasswordValid;
 export const AuthLogin = () => {
   const { authDispatch, number, password } = useAuth();
@@ -29,10 +30,10 @@ export const AuthLogin = () => {
       console.log("invalid confiorm password");
     }
   };
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (isNumberValid && isPasswordValid) {
-      const { acessToken, username1 } = loginHandler(number, password);
+      const { acessToken, username1 } = await loginHandler(number, password);
       authDispatch({
         type: "SET_ACCESS_TOKEN",
         payload: acessToken,

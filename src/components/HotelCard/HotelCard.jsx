@@ -1,12 +1,42 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { useWishlist, useAuth } from "../../Context";
+import { findhotelWishlist } from "../../utils";
 export const HotelCard = ({ hotel }) => {
   const { _id, name, image, address, state, rating, price } = hotel;
- const navigate = useNavigate()
-const handleHotelCardClick = () => {
-      navigate(`/hotels/${name}/${address}-${state}/${_id}/reverse`)
-}
+  const { wishlistDispatch, wishlist } = useWishlist();
+  console.log({ wishlist });
+  const { acessToken , authDispatch} = useAuth();
+  console.log({ acessToken });
+  const isHotelinWishlist = findhotelWishlist(wishlist, _id);
+  const navigate = useNavigate();
+  const handleHotelCardClick = () => {
+    navigate(`/hotels/${name}/${address}-${state}/${_id}/reverse`);
+  };
+  const handleWishlist = (e) => {
+    e.stopPropagation();
+    if (acessToken) {
+      if (!isHotelinWishlist) {
+        wishlistDispatch({
+          type: "ADD_WISHLIST_HOTEL",
+          payload: hotel,
+        });
+          navigate("/wishlist");
+      } else {
+        wishlistDispatch({
+          type: "REMOVE_WISHLIST_HOTEL",
+          payload: _id,
+        });
+      }
+    
+    }else{
+      authDispatch({
+        type:"SHOW_AUTHMODAL"
+      })
+    }
+  };
   return (
-    <div onClick={handleHotelCardClick}
+    <div
+      onClick={handleHotelCardClick}
       className="card position-relative h-100"
       style={{ width: "18rem", border: "none" }}
     >
@@ -19,7 +49,7 @@ const handleHotelCardClick = () => {
         alt={name}
         style={{ height: "280px", objectFit: "cover" }}
         onError={(e) => {
-          e.target.onerror = null; 
+          e.target.onerror = null;
           e.target.src =
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa";
         }}
@@ -29,6 +59,7 @@ const handleHotelCardClick = () => {
         style={{ position: "absolute", top: "12px", right: "12px" }}
       >
         <button
+          onClick={handleWishlist}
           className="btn-wishlist border-0 bg-transparent p-0"
           style={{ cursor: "pointer" }}
         >
@@ -37,7 +68,7 @@ const handleHotelCardClick = () => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              // fill={isFavorite ? "#ff385c" : "rgba(0,0,0,0.5)"}
+              fill={isHotelinWishlist ? "#ff385c" : ""}
               stroke="#fff"
               strokeWidth="2"
             >
@@ -63,9 +94,7 @@ const handleHotelCardClick = () => {
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </span>
-            <span style={{ color: "#222", fontWeight: "500" }}>
-              {hotel.rating}
-            </span>
+            <span style={{ color: "#222", fontWeight: "500" }}>{rating}</span>
           </span>
         </div>
         <p
