@@ -1,7 +1,7 @@
 import { validateNumber, validatePassword } from "../../utils";
 import { useAuth } from "../../Context";
 import { loginHandler } from "../../services";
-import { aside } from "framer-motion/client";
+
 let isNumberValid, isPasswordValid;
 export const AuthLogin = () => {
   const { authDispatch, number, password } = useAuth();
@@ -51,10 +51,10 @@ export const AuthLogin = () => {
     });
   };
   const handleTestCredentials = async () =>{
-  const { acessToken, username1 } = await loginHandler(7777777777, "Test@123456" );
+  const { accessToken, username1 } = await loginHandler(7777777777, "Test@123456" );
   authDispatch({
         type: "SET_ACCESS_TOKEN",
-        payload: acessToken,
+        payload: accessToken,
       });
       authDispatch({
         type: "SET_USERNAME_TOKEN",

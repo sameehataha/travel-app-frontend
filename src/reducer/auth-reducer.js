@@ -52,7 +52,7 @@ export const authReducer = (state, { type, payload }) => {
     case "SET_ACCESS_TOKEN":
         return{
             ...state,
-            acessToken:payload
+            accessToken:payload
         }
     case "SET_USERNAME_TOKEN":
         return {

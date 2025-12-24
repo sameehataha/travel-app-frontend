@@ -6,7 +6,7 @@ export const loginHandler = async (number,password) => {
             number:number, password:password 
         })
           console.log({accessToken, username})
-        return { acessToken: accessToken, username1: username } 
+        return { accessToken: accessToken, username1: username } 
     }catch(err){
        console.log("unable to login")
     }
