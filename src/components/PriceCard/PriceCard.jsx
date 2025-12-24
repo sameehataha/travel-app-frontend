@@ -1,13 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { useDate } from "../../Context";
 import { DateSelector } from "../DateSelector/DateSelector";
 export const PriceCard = ({ singleHotel }) => {
-  const { price, rating } = singleHotel;
-  const { guests, dateDispatch } = useDate();
+  const { price, rating, _id } = singleHotel;
+  const { guests, dateDispatch, checkin, checkout } = useDate();
+  const navigate = useNavigate();
   const hangleGuestsChange = (event) => {
     dateDispatch({
       type: "GUESTS",
       payload: event.target.value,
     });
+  };
+  const handleReserve = () => {
+    navigate(`/confirmbooking/stay/${_id}`);
   };
   return (
     <div className="col-lg-5">
@@ -130,6 +135,8 @@ export const PriceCard = ({ singleHotel }) => {
 
         {/* Reserve Button */}
         <button
+          onClick={handleReserve}
+          disabled={checkin && checkout && guests > 0 ? false : true}
           className="btn w-100 mb-3"
           style={{
             backgroundColor: "#FF5A5F",
