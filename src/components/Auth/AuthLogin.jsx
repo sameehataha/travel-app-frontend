@@ -33,10 +33,10 @@ export const AuthLogin = () => {
   const handleFormSubmit =  (e) => {
     e.preventDefault();
     if (isNumberValid && isPasswordValid) {
-      const { acessToken, username1 } =  loginHandler(number, password);
+      const { accessToken, username1 } =  loginHandler(number, password);
       authDispatch({
         type: "SET_ACCESS_TOKEN",
-        payload: acessToken,
+        payload: accessToken,
       });
       authDispatch({
         type: "SET_USERNAME_TOKEN",
