@@ -4,7 +4,7 @@ export const signupHandler = async (name, number, email, password) => {
   try {
     const response = await axios.post(API_ENDPOINTS.register, {
       username: name,
-      phoneNumber: number,
+      number: number,
       email: email,
       password: password,
     });
