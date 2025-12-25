@@ -103,7 +103,7 @@ export const AuthSignup = () => {
           <label className="form-label fw-semibold">
             Password <span className="text-danger">*</span>
           </label>
-          <input defaultValue={password} checked={password} type="password" className="form-control" placeholder="Enter Password" required  onChange={handlePasswordChnage}/>
+          <input defaultValue={password}  type="password" className="form-control" placeholder="Enter Password" required  onChange={handlePasswordChnage}/>
         </div>
         <div className="mb-3">
           <label className="form-label fw-semibold">
