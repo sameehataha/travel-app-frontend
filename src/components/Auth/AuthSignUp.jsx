@@ -37,28 +37,26 @@ export const AuthSignup = () => {
       authDispatch({ type: "CONFIRM_PASSWORD", payload: event.target.value });
     }
   };
+const handleSubmitBtn = async (event) => {
+    event.preventDefault()
 
-  const handleSubmitBtn = async (event) => {  // FIX: async in case signupHandler is async
-    event.preventDefault();
+    // Read values directly from the form, bypassing broken context state
+    const formData = new FormData(event.target)
+    const numVal = formData.get("mobileNumber")
+    const nameVal = formData.get("name")
+    const emailVal = formData.get("email")
+    const passVal = formData.get("password")
+    const confirmVal = formData.get("confirmPassword")
 
-    // FIX: Re-validate from context state at submit time (not stale module vars)
-    const isValid =
-      validateNumber(number) &&
-      validateName(name) &&
-      validateEmail(email) &&
-      validatePassword(password) &&
-      validatePassword(confirmPassword) &&
-      password === confirmPassword;   // FIX: also check passwords match
-
-    if (isValid) {
-      await signupHandler(name, number, email, password);
-
-      // FIX: Only clear data and close modal on SUCCESS
-      authDispatch({ type: "CLEAR_USER_DATA" });
-      authDispatch({ type: "SHOW_AUTHMODAL" }); // FIX: was missing — modal never closed after signup
+    if (passVal !== confirmVal) {
+        alert("Passwords do not match")
+        return
     }
-  };
 
+    await signupHandler(nameVal, numVal, emailVal, passVal)
+    authDispatch({ type: "CLEAR_USER_DATA" })
+    authDispatch({ type: "SHOW_AUTHMODAL" })
+}
   return (
     <form onSubmit={handleSubmitBtn}>
       <div className="mb-3">
