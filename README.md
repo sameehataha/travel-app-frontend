@@ -56,3 +56,35 @@ A modern, full-featured hotel booking platform built with React. Browse hotels, 
 | **Build Tool** | React Scripts |
 
 ## 📁 Project Structure
+src/
+├── components/ # Reusable UI components
+│ ├── Auth/ # Login/Signup forms
+│ ├── AuthModal/ # Modal wrapper for auth
+│ ├── Categories/ # Category pills with scroll
+│ ├── DateSelector/ # Check-in/out date picker
+│ ├── Filters/ # Filter components
+│ ├── HotelCard/ # Hotel listing card
+│ ├── HotelDetails/ # Detailed hotel view
+│ ├── HotelImages/ # Image gallery
+│ ├── Navbar/ # Navigation bar
+│ ├── PriceCard/ # Booking price card
+│ └── SearchStayWithDate/ # Search modal
+├── Context/ # React Context providers
+│ ├── auth-context.js
+│ ├── category-context.js
+│ ├── data-context.js
+│ ├── filter-context.js
+│ └── wishlist-context.js
+├── pages/ # Page components
+│ ├── Home.js # Main listing page
+│ ├── SearchResultPage.js
+│ ├── SingleHotel.js
+│ ├── Wishlist.js
+│ └── payment.js
+├── reducer/ # Reducer functions
+├── services/ # API service calls
+├── utils/ # Helper functions & validations
+├── config/ # API configuration
+└── App.js # Routing setup
+
+
