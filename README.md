@@ -1,4 +1,4 @@
-# 🏨 Travel Booking App - Frontend
+# 🏨 Hotel Booking Platform (Booking.com)  - Frontend
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-ff385c?style=for-the-badge&logo=vercel&logoColor=white)](https://travel-app-frontend-sigma.vercel.app/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
