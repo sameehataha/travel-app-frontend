@@ -87,4 +87,82 @@ src/
 ├── config/ # API configuration <br>
 └── App.js # Routing setup <br>
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sameehataha/travel-app-frontend.git
+cd travel-app-frontend
+```
+
+2. Install dependencies:
+npm install
+
+3. Create a .env file in the root directory:
+REACT_APP_API_BASE_URL = https://travel-app-backend-jrcu.onrender.com
+
+4. Start the development server:
+ npm start
+The app will open at http://localhost:3000
+
+Build for Production
+npm run build
+
+## 🔗 API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/hotels` | GET | Get all hotels |
+| `/api/hotels?category={category}` | GET | Filter by category |
+| `/api/hotels/{id}` | GET | Get single hotel |
+| `/api/category` | GET | Get categories |
+| `/api/auth/register` | POST | User registration |
+| `/api/auth/login` | POST | User login |
+| `/api/wishlist` | GET/POST/DELETE | Wishlist operations |
+
+## Key Features in Detail
+
+### Filter System
+1. The app includes a comprehensive filter system with:
+2. Price Range: Dual-handle slider with ₹100-25,000 range
+3. Rooms & Beds: Separate filters for bedrooms, beds, and bathrooms
+4. Property Type: Quick-select buttons for different accommodation types
+5. Star Rating: Filter by minimum rating (1-5 stars)
+6. Free Cancellation: Toggle switch for cancelable bookings
+
+
+### Infinite Scroll
+Hotels load progressively as you scroll, providing a smooth browsing experience without pagination.
+
+
+### Responsive Design
+Fully responsive layout that works on desktop, tablet, and mobile devices.
+
+#🤝 Contributing
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/amazing-feature)
+3. Commit your changes (git commit -m 'Add some amazing feature')
+4. Push to the branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# 🙏 Acknowledgments
+
+* [Booking.com](https://www.booking.com) for design inspiration
+* [Razorpay](https://razorpay.com) for payment integration
+* [Unsplash](https://unsplash.com) for placeholder images
+
+# 📞 Contact
+Sameeha Taha - sameehataha24@gmail.com
+
+Project Link: https://travel-app-frontend-sigma.vercel.app/
 
