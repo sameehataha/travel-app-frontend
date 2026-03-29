@@ -6,21 +6,21 @@
 
 A modern, full-featured hotel booking platform built with React. Browse hotels, filter by price and amenities, manage wishlists, and complete bookings with secure payment integration.
 
-## ✨ Features
+##  Features
 
-### 🔐 Authentication
+###  Authentication
 - User registration with validation (name, email, phone, password)
 - Login with phone number & password
 - JWT token-based authentication
 - Persistent login session
 
-### 🏠 Hotel Browsing
+###  Hotel Browsing
 - Infinite scroll for seamless browsing
 - Category-based filtering (Beach, National Parks, Mountains, etc.)
 - Responsive hotel cards with images and pricing
 - Detailed hotel view with amenities, house rules, and health & safety info
 
-### 🔍 Search & Filters
+###  Search & Filters
 - Search by destination with autocomplete suggestions
 - Date picker for check-in/check-out
 - Guest count selector
@@ -31,17 +31,17 @@ A modern, full-featured hotel booking platform built with React. Browse hotels, 
   - Star rating (1-5⭐)
   - Free cancellation toggle
 
-### ❤️ Wishlist
+###  Wishlist
 - Add/remove hotels from wishlist
 - Persistent wishlist state
 - Quick access from navbar
 
-### 💳 Payment
+###  Payment
 - Razorpay integration for secure payments
 - Detailed booking summary
 - Price breakdown (room charges + service fee)
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Technologies |
 |----------|-------------|
@@ -87,7 +87,7 @@ src/
 ├── config/ # API configuration <br>
 └── App.js # Routing setup <br>
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -145,7 +145,7 @@ Hotels load progressively as you scroll, providing a smooth browsing experience 
 ### Responsive Design
 Fully responsive layout that works on desktop, tablet, and mobile devices.
 
-#🤝 Contributing
+#  Contributing
 1. Fork the repository
 2. Create your feature branch (git checkout -b feature/amazing-feature)
 3. Commit your changes (git commit -m 'Add some amazing feature')
@@ -155,13 +155,13 @@ Fully responsive layout that works on desktop, tablet, and mobile devices.
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-# 🙏 Acknowledgments
+#  Acknowledgments
 
 * [Booking.com](https://www.booking.com) for design inspiration
 * [Razorpay](https://razorpay.com) for payment integration
 * [Unsplash](https://unsplash.com) for placeholder images
 
-# 📞 Contact
+#  Contact
 Sameeha Taha - sameehataha24@gmail.com
 
 Project Link: https://travel-app-frontend-sigma.vercel.app/
