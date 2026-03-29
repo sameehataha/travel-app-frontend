@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 🏨 Travel Booking App - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Live Demo](https://img.shields.io/badge/Live-Demo-ff385c?style=for-the-badge&logo=vercel&logoColor=white)](https://travel-app-frontend-sigma.vercel.app/)
+[![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## Available Scripts
+A modern, full-featured hotel booking platform built with React. Browse hotels, filter by price and amenities, manage wishlists, and complete bookings with secure payment integration.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🔐 Authentication
+- User registration with validation (name, email, phone, password)
+- Login with phone number & password
+- JWT token-based authentication
+- Persistent login session
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🏠 Hotel Browsing
+- Infinite scroll for seamless browsing
+- Category-based filtering (Beach, National Parks, Mountains, etc.)
+- Responsive hotel cards with images and pricing
+- Detailed hotel view with amenities, house rules, and health & safety info
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔍 Search & Filters
+- Search by destination with autocomplete suggestions
+- Date picker for check-in/check-out
+- Guest count selector
+- Advanced filters:
+  - Price range slider
+  - Property type (House, Flat, Hotel, Guest House)
+  - Rooms & beds configuration
+  - Star rating (1-5⭐)
+  - Free cancellation toggle
 
-### `npm test`
+### ❤️ Wishlist
+- Add/remove hotels from wishlist
+- Persistent wishlist state
+- Quick access from navbar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 💳 Payment
+- Razorpay integration for secure payments
+- Detailed booking summary
+- Price breakdown (room charges + service fee)
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React 19, React Router DOM v7 |
+| **Styling** | Bootstrap 5, CSS Modules, Material-UI |
+| **State Management** | React Context API + useReducer |
+| **HTTP Client** | Axios |
+| **Date Handling** | React DatePicker |
+| **Animations** | Framer Motion |
+| **Icons** | Lucide React |
+| **Payment** | Razorpay SDK |
+| **Build Tool** | React Scripts |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📁 Project Structure
