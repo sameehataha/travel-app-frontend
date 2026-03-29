@@ -57,34 +57,34 @@ A modern, full-featured hotel booking platform built with React. Browse hotels, 
 
 ## 📁 Project Structure
 src/
-├── components/ # Reusable UI components
-│ ├── Auth/ # Login/Signup forms
-│ ├── AuthModal/ # Modal wrapper for auth
-│ ├── Categories/ # Category pills with scroll
-│ ├── DateSelector/ # Check-in/out date picker
-│ ├── Filters/ # Filter components
-│ ├── HotelCard/ # Hotel listing card
-│ ├── HotelDetails/ # Detailed hotel view
-│ ├── HotelImages/ # Image gallery
-│ ├── Navbar/ # Navigation bar
-│ ├── PriceCard/ # Booking price card
-│ └── SearchStayWithDate/ # Search modal
-├── Context/ # React Context providers
-│ ├── auth-context.js
-│ ├── category-context.js
-│ ├── data-context.js
-│ ├── filter-context.js
-│ └── wishlist-context.js
-├── pages/ # Page components
-│ ├── Home.js # Main listing page
-│ ├── SearchResultPage.js
-│ ├── SingleHotel.js
-│ ├── Wishlist.js
-│ └── payment.js
-├── reducer/ # Reducer functions
-├── services/ # API service calls
-├── utils/ # Helper functions & validations
-├── config/ # API configuration
-└── App.js # Routing setup
+├── components/ # Reusable UI components <br>
+│ ├── Auth/ # Login/Signup forms <br>
+│ ├── AuthModal/ # Modal wrapper for auth <br>
+│ ├── Categories/ # Category pills with scroll <br>
+│ ├── DateSelector/ # Check-in/out date picker <br>
+│ ├── Filters/ # Filter components <br>
+│ ├── HotelCard/ # Hotel listing card  <br>
+│ ├── HotelDetails/ # Detailed hotel view <br>
+│ ├── HotelImages/ # Image gallery <br>
+│ ├── Navbar/ # Navigation bar <br>
+│ ├── PriceCard/ # Booking price card <br>
+│ └── SearchStayWithDate/ # Search modal <br>
+├── Context/ # React Context providers <br>
+│ ├── auth-context.js <br>
+│ ├── category-context.js<br>
+│ ├── data-context.js <br>
+│ ├── filter-context.js <br>
+│ └── wishlist-context.js <br>
+├── pages/ # Page components <br>
+│ ├── Home.js # Main listing page <br>
+│ ├── SearchResultPage.js <br>
+│ ├── SingleHotel.js <br>
+│ ├── Wishlist.js <br>
+│ └── payment.js <br>
+├── reducer/ # Reducer functions <br>
+├── services/ # API service calls <br>
+├── utils/ # Helper functions & validations <br>
+├── config/ # API configuration <br>
+└── App.js # Routing setup <br>
 
 
