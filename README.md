@@ -6,9 +6,10 @@
 
 A modern, full-featured hotel booking platform built with React. Browse hotels, filter by price and amenities, manage wishlists, and complete bookings with secure payment integration.
 
-## 🖼️ App Preview
+##  Application Preview
 
-![Booking.com  (Airbnb Clone) - Homepage](./)
+![Booking.com  (Airbnb Clone) - Homepage](./Screenshot 2026-03-29 162525.png)
+
 ##  Features
 
 ###  Authentication
