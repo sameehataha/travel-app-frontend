@@ -170,3 +170,15 @@ Sameeha Taha - sameehataha24@gmail.com
 
 Project Link: https://travel-app-frontend-sigma.vercel.app/
 
+# ⭐ Star this repository if you find it useful!
+
+This README includes:
+- Professional header with live demo badge
+- Comprehensive feature list
+- Tech stack table
+- Project structure
+- Setup instructions
+- API endpoints reference
+- Contributing guidelines
+- License information
+
